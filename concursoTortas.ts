@@ -23,22 +23,9 @@
 import * as rs from "readline-sync";
 
 let cantidadParticipantes: number = rs.questionInt("Ingrese cantidad de participantes: ");
-let puntos : number;
 let sabor: number = rs.questionInt("Ingrese puntos obtenidos en sabor entre 1 y 5: ") // Falta rango: sabor >= 1 || sabor <= 5
 let presentacion: number = rs.questionInt("Ingrese puntos obtenidos en presentacion entre 1 y 5: "); // Falta rango: presentacion >= 1 || presentacion <= 5
 let dificultad: number = rs.questionInt("Ingrese puntos obteni dos en dificultad entre 1 y 5: "); // Falta rango: dificultad >= 1 || dificultad <= 5
-
-
-//Pide puntos para cantidad de participantes OK
-
-for (let i : number = 1; i < cantidadParticipantes; i++) {
-    sabor = rs.questionInt("Ingrese puntos obtenidos en sabor entre 1 y 5: "); 
-     presentacion = rs.questionInt("Ingrese puntos obtenidos en presentacion entre 1 y 5: "); 
-     dificultad = rs.questionInt("Ingrese puntos obteni dos en dificultad entre 1 y 5: "); 
-    sabor++
-    presentacion++
-    dificultad++
-}    
 
 //Funcion que calcula TOTAL 
 
@@ -47,8 +34,21 @@ let calcularPuntaje = (sabor: number, presentacion: number, dificultad: number):
     return sabor + presentacion + dificultad;
 }
 
-// Funcion de total asignada a una variable
-// let total : number = calcularPuntaje(sabor, presentacion, dificultad);
+console.log("Su puntaje total es: " + calcularPuntaje(sabor, presentacion, dificultad));
+
+//Pide puntos para cantidad de participantes OK
+
+// for (let i : number = 1; i < cantidadParticipantes; i++) {
+//      let sabor: number = rs.questionInt("Ingrese puntos obtenidos en sabor entre 1 y 5: "); 
+//      let presentacion: number = rs.questionInt("Ingrese puntos obtenidos en presentacion entre 1 y 5: "); 
+//      let dificultad: number = rs.questionInt("Ingrese puntos obtenidos en dificultad entre 1 y 5: "); 
+    
+//     sabor++
+//     presentacion++
+//     dificultad++
+//     console.log(calcularPuntaje(sabor, presentacion, dificultad));
+
+// }    
 
 
 // Determinar Ganador:
