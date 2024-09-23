@@ -28,12 +28,6 @@ let sabor: number = rs.questionInt("Ingrese puntos obtenidos en sabor entre 1 y 
 let presentacion: number = rs.questionInt("Ingrese puntos obtenidos en presentacion entre 1 y 5: "); // Falta rango: presentacion >= 1 || presentacion <= 5
 let dificultad: number = rs.questionInt("Ingrese puntos obteni dos en dificultad entre 1 y 5: "); // Falta rango: dificultad >= 1 || dificultad <= 5
 
-//Mostrar ingreso de puntajes tanta cantidad de veces como participantes tenga
-
-let calcularPuntaje = (sabor: number, presentacion: number, dificultad: number): number => {
-    
-    return sabor + presentacion + dificultad;
-}
 
 //Pide puntos para cantidad de participantes OK
 
@@ -46,19 +40,23 @@ for (let i : number = 1; i < cantidadParticipantes; i++) {
     dificultad++
 }    
 
-// for (let i : number = 1; i <= cantidadParticipantes; i++) {
-//         contador++
-//         console.log("Participante Nro " + i);
-
-//     }
-        
 //Funcion que calcula TOTAL 
 
+let calcularPuntaje = (sabor: number, presentacion: number, dificultad: number): number => {
+    
+    return sabor + presentacion + dificultad;
+}
 
-
+// Funcion de total asignada a una variable
 // let total : number = calcularPuntaje(sabor, presentacion, dificultad);
 
 
+// Determinar Ganador:
+let determinarGanador = (participantes: number, puntiaciones: number): number => {
+    
+    
+    return 0
+}
 
 
 
