@@ -21,57 +21,48 @@
 
 import * as rs from "readline-sync"
 
-console.log("¡Gran Concurso de Tortas de Tres Arroyos! 🎂");
+console.log("¡Gran Concurso de Tortas de Tres Arroyos! 🎂" + "\n");
 
 let cantidadParticipantes: number = rs.questionInt("Ingrese cantidad de participantes: ");
-let sabor: number; //= rs.questionInt("Ingrese puntos obtenidos en sabor: ");
-let presentacion: number; //= rs.questionInt("Ingrese puntos obtenidos en presentacion: ");
-let dificultad: number; //= rs.questionInt("Ingrese puntos obteni dos en dificultad: ");
+let sabor: number;
+let presentacion: number;
+let dificultad: number;
 
-
-//Funcion de calcular puntaje FUNCION OK
+//Funcion de calcular puntaje
 let calcularPuntaje = (sabor: number, presentacion: number, dificultad: number): number => {
 
     return sabor + presentacion + dificultad;
 }
 
-
-//Pide puntos para cantidad de participantes OK : )
+//Ciclo for y while para pedir puntos entre 1 y 5 por categoría por cantidad de participantes
 
 for (let i: number = 1; i <= cantidadParticipantes; i++) {
-    console.log("--> Participante Numero " + i)
-    sabor = rs.questionInt("Ingrese puntos obtenidos sabor: ")
-    presentacion = rs.questionInt("Ingrese puntos obtenidos por prsentacion: ")
-    dificultad = rs.questionInt("Ingrese puntos obtenidos por dificultad: ")
 
-    while (sabor < 0 || sabor > 5 || presentacion < 0 || presentacion > 5 || dificultad < 0 || dificultad > 5) {
+    console.log("--> Participante Numero " + i);
+    
+    sabor = rs.questionInt("Ingrese puntos obtenidos sabor: ");
+    presentacion = rs.questionInt("Ingrese puntos obtenidos por presentacion: ");
+    dificultad = rs.questionInt("Ingrese puntos obtenidos por dificultad: ");
+
+    while ((sabor < 0) || (sabor > 5) || (presentacion < 0) || (presentacion > 5) || (dificultad < 0) || (dificultad > 5)) {
 
         console.log("Ingrese puntajes entre 1 y 5");
         
-        sabor = rs.questionInt("Ingrese puntos obtenidos por sabor: ")
-        presentacion = rs.questionInt("Ingrese puntos obtenidos por presentacion: ")
-        dificultad = rs.questionInt("Ingrese puntos obtenidos por presentacion: ")
+        sabor = rs.questionInt("Ingrese puntos obtenidos por sabor: ");
+        presentacion = rs.questionInt("Ingrese puntos obtenidos por presentacion: ");
+        dificultad = rs.questionInt("Ingrese puntos obtenidos por presentacion: ");
 
     }
 
-    console.log("Sus puntos en categoria sabor son: " + sabor)
-    console.log("Sus puntos en categoria presentacion son: " + presentacion)
-    console.log("Sus puntos en categoria dificultad son: " + dificultad)
-
-    console.log("Su puntaje total es: " + calcularPuntaje(sabor, presentacion, dificultad))
-
-
-    sabor++
-    presentacion++
-    dificultad++
+    console.log("Su puntaje total es: " + calcularPuntaje(sabor, presentacion, dificultad) + "\n");
 
 }
 
-// Determinar GANADOR 
+// Función para determinar GANADOR (no logré resolverlo, creo que podría ser con un ciclo for)
 
 let determinarGanador = (participantes: number, puntajes: number) : number => {
 
+    cantidadParticipantes = rs.questionInt("Ingrese cantidad de participantes: ");
 
     return 0
 }
-
